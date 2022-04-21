@@ -1,0 +1,8 @@
+{
+	"seq_fasta":"data/sequences.fa",
+	"struct_fasta":"data/structures.fa",
+	"score_csv":"data/average_scores.csv",
+	"batch_size":32,
+	"n_samples":792,
+	"test_size":0.1
+}

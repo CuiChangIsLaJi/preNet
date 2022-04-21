@@ -1,0 +1,6 @@
+{
+	"init_lr":1.0e-2,
+	"num_epochs":50,
+	"step_size":10,
+	"gamma":0.5
+}

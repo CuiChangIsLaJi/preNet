@@ -1,0 +1,6 @@
+{
+	"mid_channels":4,
+	"out_channels":8,
+	"in_per_channel":26,
+	"dropout":0.1
+}
