@@ -24,7 +24,7 @@
   `mkdir results`    
   `cd results`  
   `mkdir eval`  
-  `mkdir grad_cam`
+  `mkdir grad_cam`  
   To train and test a model:  
   `python train_and_test.py --config-path config/ --model-path model/`  
   To predict the docking activity of a 60-nt pre-RNA:  
