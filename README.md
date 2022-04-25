@@ -28,6 +28,6 @@
   To train and test a model:  
   `python train_and_test.py --config-path config/ --model-path model/`  
   To predict the docking activity of a 60-nt pre-RNA:  
-  `python predict.py --config-path config/ --model-path model/ --sequence [sequence]`  
+  `python predict.py --config-path config/ --model model/ --sequence [sequence]`  
   To interpret the model with Gradient Class Activation Mapping:  
-  `python interpret.py --config-path config/ --model-path model/ --threshold [threshold score to select the candidates you are interested in]`
+  `python interpret.py --config-path config/ --model model/ --threshold [threshold score to select the candidates you are interested in]`
