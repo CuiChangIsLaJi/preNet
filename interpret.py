@@ -14,7 +14,7 @@ parser.add_argument("--threshold",help="threshold score for searching the candid
 args = vars(parser.parse_args())
 config_path = args["config_path"]
 model_path = args["model"]
-threshold = args["threshold"]
+threshold = eval(args["threshold"])
 
 data_config = json.load(open(os.path.join(config_path,"data.json"),"r"))
 model_config = json.load(open(os.path.join(config_path,"model.json"),"r"))
