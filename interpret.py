@@ -22,14 +22,13 @@ model_config = json.load(open(os.path.join(config_path,"model.json"),"r"))
 seq_fasta = data_config["seq_fasta"]
 struct_fasta = data_config["struct_fasta"]
 score_csv = data_config["score_csv"]
-n_samples = data_config["n_samples"]
 
 mid_channels = model_config["mid_channels"]
 out_channels = model_config["out_channels"]
 dropout = model_config["dropout"]
 in_per_channel = model_config["in_per_channel"]
 
-seqs,structs,scores = parse_and_split_samples(seq_fasta,struct_fasta,score_csv,n_samples,split=False)
+seqs,structs,scores = parse_and_split_samples(seq_fasta,struct_fasta,score_csv,split=False)
 dataset = preNet_dataset(seqs,structs,scores)
 dataloader = DataLoader(dataset)
 

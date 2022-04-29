@@ -27,9 +27,8 @@ seq_fasta = data_config["seq_fasta"]
 struct_fasta = data_config["struct_fasta"]
 score_csv = data_config["score_csv"]
 batch_size = data_config["batch_size"]
-n_samples = data_config["n_samples"]
 test_size = data_config["test_size"]
-seqs_train,seqs_test,structs_train,structs_test,scores_train,scores_test = parse_and_split_samples(seq_fasta,struct_fasta,score_csv,n_samples,split=True,test_size=test_size)
+seqs_train,seqs_test,structs_train,structs_test,scores_train,scores_test = parse_and_split_samples(seq_fasta,struct_fasta,score_csv,split=True,test_size=test_size)
 training_set = preNet_dataset(seqs_train,structs_train,scores_train)
 test_set = preNet_dataset(seqs_test,structs_test,scores_test)
 training_dataloader = DataLoader(training_set,batch_size=batch_size)
