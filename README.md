@@ -31,3 +31,5 @@
   `python predict.py --config-path config/ --model model/ --sequence [sequence]`  
   To interpret the model with Gradient Class Activation Mapping:  
   `python interpret.py --config-path config/ --model model/ --threshold [threshold score to select the candidates you are interested in]`
+ # Oops !
+  A severe error has been made during my preparation of the dataset! Sorry for that. The corrected release would be uploaded during 4.29~5.5.
