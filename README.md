@@ -30,4 +30,4 @@
   To predict the docking activity of a 60-nt pre-RNA:  
   `python predict.py --config-path config/ --model model/ --sequence [sequence]`  
   To interpret the model with Gradient Class Activation Mapping(besides the figures, the program would also dump a `candidates.csv` file with the sorted predicted scores of positive samples):  
-  `python interpret.py --config-path config/ --model model/
+  `python interpret.py --config-path config/ --model model/`
