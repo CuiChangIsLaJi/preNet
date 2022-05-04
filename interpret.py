@@ -10,11 +10,9 @@ import pandas as pd
 parser = ArgumentParser()
 parser.add_argument("--config-path",help="path for configure json files.")
 parser.add_argument("--model",help="model to use.")
-parser.add_argument("--threshold",help="threshold score for searching the candidates")
 args = vars(parser.parse_args())
 config_path = args["config_path"]
 model_path = args["model"]
-threshold = eval(args["threshold"])
 
 data_config = json.load(open(os.path.join(config_path,"data.json"),"r"))
 model_config = json.load(open(os.path.join(config_path,"model.json"),"r"))
@@ -50,9 +48,11 @@ for X_seq,X_struct,y in dataloader:
     score = cam_seq.forward(X_seq,X_struct,y,"results/grad_cam/",f"#{i+1}_seq.png")
     cam_struct.forward(X_seq,X_struct,y,"results/grad_cam/",f"#{i+1}_struct.png")
     print(f"{i+1}\t\t{y.item()}\t\t{score}")
-    if y > 0.0 and score > threshold:
+    if y > 0.0:
         s_ids.append(i+1)
         scores.append(score)
     i += 1
 candidates = pd.DataFrame({"sample_id":s_ids,"score":scores})
+candidates = candidates.drop_duplicates(keep="first",subset=["score"])
+candidates = candidates.sort_values(by="score",ascending=False)
 candidates.to_csv("results/grad_cam/candidates.csv",sep="\t")
