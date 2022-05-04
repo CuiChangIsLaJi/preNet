@@ -29,7 +29,5 @@
   `python train_and_test.py --config-path config/ --model-path model/`  
   To predict the docking activity of a 60-nt pre-RNA:  
   `python predict.py --config-path config/ --model model/ --sequence [sequence]`  
-  To interpret the model with Gradient Class Activation Mapping:  
-  `python interpret.py --config-path config/ --model model/ --threshold [threshold score to select the candidates you are interested in]`
- # Oops !
-  A severe error has been made during my preparation of the dataset! Sorry for that. The corrected release would be uploaded during 4.29~5.5.
+  To interpret the model with Gradient Class Activation Mapping(besides the figures, the program would also dump a `candidates.csv` file with the sorted predicted scores of positive samples):  
+  `python interpret.py --config-path config/ --model model/
